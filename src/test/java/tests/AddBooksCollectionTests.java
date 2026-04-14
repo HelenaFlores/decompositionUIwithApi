@@ -1,6 +1,7 @@
 package tests;
 
 import helpers.WithLogin;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tests.api.BooksApi;
 import tests.environment.TestBase;
@@ -12,6 +13,8 @@ import static tests.environment.TestData.*;
 
 public class AddBooksCollectionTests extends TestBase {
     private AddCollectionPage collectionPage = new AddCollectionPage();
+
+
     @Test
     @WithLogin
     void addBookToCollectionTest() {

@@ -37,11 +37,7 @@ public class AuthApi {
                 authResponse.path("expires")
         );
 
-        try {
-            open(minUriForApi);
-        } catch (Exception e) {
-            System.out.println("Could not open " + minUriForApi + ", but continuing to set cookies");
-        }
+        open(minUriForApi);
         getWebDriver().manage().addCookie(new Cookie("userID", authResponse.path("userId")));
         getWebDriver().manage().addCookie(new Cookie("expires", authResponse.path("expires")));
         getWebDriver().manage().addCookie(new Cookie("token", authResponse.path("token")));
