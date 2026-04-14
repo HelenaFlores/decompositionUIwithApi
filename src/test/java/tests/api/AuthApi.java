@@ -9,7 +9,6 @@ import tests.api.environmentApi.AuthData;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.given;
-import static io.restassured.http.ContentType.JSON;
 import static specs.Spec.loginRequestSpec;
 import static specs.Spec.successResponseSpec;
 import static tests.environment.TestData.*;
@@ -27,7 +26,7 @@ public class AuthApi {
                 .spec(loginRequestSpec)
                 .body(loginBody )
                 .when()
-                .post(loginUriApi)
+                .post()
                 .then()
                 .spec(successResponseSpec)
                 .extract().response();
